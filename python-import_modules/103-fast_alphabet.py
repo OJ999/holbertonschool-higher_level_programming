@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import fast_alphabet_103
+import string
+print("".join(list(string.ascii_uppercase)))
