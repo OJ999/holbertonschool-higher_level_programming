@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
-for tens_digit in range(10):
-    for ones_digit in range(tens_digit + 1, 10):
-        if tens_digit < 9:
-            print("{:d}{:d}, ".format(tens_digit, ones_digit), end="")
-        else:
-            print("{:d}{:d}".format(tens_digit, ones_digit), end="\n")
+for num in range(0, 90):
+        if num % 10 > num / 10:
+                if num != 89:
+                        print("{:02d}, ".format(num), end='')
+                else:
+                        print("{:02d}".format(num))
+                        
