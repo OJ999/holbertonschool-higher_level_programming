@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import os
+from os import system
 
 if __name__ == "__main__":
-    os.system('./0-add.py')
+    system("./0-add.py")
