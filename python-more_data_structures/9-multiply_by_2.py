@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-def simple_delete(a_dictionary, key=""):
-    if a_dictionary.get(key) is not None:
-        del a_dictionary[key]
-    return (a_dictionary)
+def multiply_by_2(a_dictionary):
+    new_dict = {}
+    for key, value in a_dictionary.items():
+        new_dict[key] = value * 2
+    return new_dict
