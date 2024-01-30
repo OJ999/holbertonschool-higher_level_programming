@@ -1,15 +1,7 @@
 #!/usr/bin/python3
-
-def multiply_by_2(a_dictionary):
-    new_dict = {}
-    for key, value in a_dictionary.items():
-        new_dict[key] = value * 2
-    return new_dict
-
-def print_sorted_dictionary(a_dictionary):
-    sorted_items = sorted(a_dictionary.items())
-    for key, value in sorted_items:
-        print(f"{key}: {value}")
+multiply_by_2 = __import__('9-multiply_by_2').multiply_by_2
+print_sorted_dictionary = \
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
 a_dictionary = {'John': 12, 'Alex': 8, 'Bob': 14, 'Mike': 14, 'Molly': 16}
 new_dict = multiply_by_2(a_dictionary)
