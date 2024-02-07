@@ -20,10 +20,9 @@ class BaseGeometry:
 if __name__ == "__main__":
     bg = BaseGeometry()
 
-    bg.integer_validator("my_int", 12)
-    bg.integer_validator("width", 89)
-
     try:
+        bg.integer_validator("my_int", 12)
+        bg.integer_validator("width", 89)
         bg.integer_validator("name", "John")
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
