@@ -1,30 +1,30 @@
+#!/usr/bin/python3
 def pascal_triangle(n):
-    """
-    Returns Pascal's triangle of height n.
+    """ Function that returns the pascal triangle
 
     Args:
-        n (int): Height of the Pascal's triangle.
+        n: number of lines
 
     Returns:
-        list of lists: Pascal's triangle represented as a list of lists of integers.
+        matrix: a matrix with the pascal triangle
+
     """
-    if n <= 0:
-        return []
 
-    triangle = [[1]]  # Initialize with the first row
+    matrix = []
+    prev = []
 
-    for i in range(1, n):
-        row = [1]  # Start each row with 1
-        for j in range(1, i):
-            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])  # Calculate the value based on previous row
-        row.append(1)  # End each row with 1
-        triangle.append(row)
+    for i in range(n):
+        res_list = []
+        p1 = -1
+        p2 = 0
+        for j in range(len(prev) + 1):
+            if p1 == -1 or p2 == len(prev):
+                res_list += [1]
+            else:
+                res_list += [prev[p1] + prev[p2]]
+            p1 += 1
+            p2 += 1
+        matrix.append(res_list)
+        prev = res_list[:]
 
-    return triangle
-
-# Test the function
-if __name__ == "__main__":
-    n = 5
-    triangle = pascal_triangle(n)
-    for row in triangle:
-        print(row)
+    return (matrix)
